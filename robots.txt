@@ -1,0 +1,5 @@
+# as long as I'm only using this to host Pebble config pages,
+# I'd rather the robots just stay away. thx.
+
+User-agent: *
+Disallow: /
