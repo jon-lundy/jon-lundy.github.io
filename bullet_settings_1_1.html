@@ -81,13 +81,13 @@ var submitButton = document.getElementById("save_button");
 submitButton.addEventListener("click", onClick, false);
 
 // update checkboxes with starting values
-if (getQueryParam("use12hTime", false)) {
+if (getQueryParam("use12hTime", 0) === "1") {
     document.getElementById("use_12h").checked = true;
 }
-if (getQueryParam("hideBattery", false)) {
+if (getQueryParam("hideBattery", 0) === "1") {
     document.getElementById("hide_battery").checked = true;
 }
-if (getQueryParam("hideDate", false)) {
+if (getQueryParam("hideDate", 0) === "1") {
     document.getElementById("hide_date").checked = true;
 }
 </script>
