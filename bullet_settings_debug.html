@@ -50,10 +50,24 @@ function saveOptions() {
     return options;
 }
 
+function getQueryParam(variable, default_) {
+    var query = location.search.substring(1); //removes the ? from start of search string
+    var items = query.split('&');
+    var i, pair;
+    for (i = 0; i < items.length; i += 1) {
+        pair = items[i].split('=');
+        if (pair[0] === variable) {
+            return decodeURIComponent(pair[1]);
+        }
+    }
+    return default_ || false;
+}
+
 function onClick() {
     var options = saveOptions();
-    var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
-    location.href = location;
+    var return_to = getQueryParam("return_to", "pebblejs://close#");
+    var location = return_to + encodeURIComponent(JSON.stringify(options));
+    document.location = location;
 }
 
 var submitButton = document.getElementById("save_button");
