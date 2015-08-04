@@ -37,9 +37,15 @@
 "use strict";
 
 function saveOptions() {
-    var use12hTime = document.getElementById("use_12h").checked ? 1 : 0;
-    var hideBattery = document.getElementById("hide_battery").checked ? 1 : 0;
-    var hideDate = document.getElementById("hide_date").checked ? 1 : 0;
+    var use12hTime = document.getElementById("use_12h").checked
+        ? 1
+        : 0;
+    var hideBattery = document.getElementById("hide_battery").checked
+        ? 1
+        : 0;
+    var hideDate = document.getElementById("hide_date").checked
+        ? 1
+        : 0;
 
     var options = {
         use12hTime: use12hTime,
@@ -70,6 +76,18 @@ function onClick() {
     document.location = location;
 }
 
+// register event handler for save button
 var submitButton = document.getElementById("save_button");
 submitButton.addEventListener("click", onClick, false);
+
+// update checkboxes with starting values
+if (getQueryParam("use12hTime", false)) {
+    document.getElementById("use_12h").checked = true;
+}
+if (getQueryParam("hideBattery", false)) {
+    document.getElementById("hide_battery").checked = true;
+}
+if (getQueryParam("hideDate", false)) {
+    document.getElementById("hide_date").checked = true;
+}
 </script>
