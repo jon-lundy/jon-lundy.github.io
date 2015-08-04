@@ -20,7 +20,7 @@
   </head>
   <body>
     <h1>Bullets</h1>
-	<h3>Configuration</h3>
+	<h3>Configuration [DEBUG]</h3>
     <p>Choose settings, then press Save</p>
     <p>
 	<input type="checkbox" id="use_12h"> Use 12-hour time
@@ -60,10 +60,8 @@
   submitButton.addEventListener("click", 
     function() {
       var options = saveOptions();
-      //alert(JSON.stringify(options));
       var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
-      //alert(location);
-      document.location = "https://www.bing.com";
+      location.href = location;
     }, 
   false);
 </script>
