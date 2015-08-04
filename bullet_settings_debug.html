@@ -37,9 +37,9 @@
 "use strict";
 
 function saveOptions() {
-    var use12hTime = document.getElementById("use_12h").checked;
-    var hideBattery = document.getElementById("hide_battery").checked;
-    var hideDate = document.getElementById("hide_date").checked;
+    var use12hTime = document.getElementById("use_12h").checked ? 1 : 0;
+    var hideBattery = document.getElementById("hide_battery").checked ? 1 : 0;
+    var hideDate = document.getElementById("hide_date").checked ? 1 : 0;
 
     var options = {
         use12hTime: use12hTime,
